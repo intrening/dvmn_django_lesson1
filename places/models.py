@@ -7,3 +7,7 @@ class Place(models.Model):
     description_long = models.TextField()
     lng = models.CharField(max_length=20)
     lat = models.CharField(max_length=20)
+
+class Image(models.Model):
+    places = models.ForeignKey(Place, on_delete=models.CASCADE)
+    image = models.ImageField()
