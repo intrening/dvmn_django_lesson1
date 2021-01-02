@@ -12,6 +12,10 @@ class Place(models.Model):
 class Image(models.Model):
     places = models.ForeignKey(Place, on_delete=models.CASCADE)
     image = models.ImageField()
+    my_order = models.PositiveIntegerField(default=0, blank=False, null=False)
+
+    class Meta(object):
+        ordering = ['my_order']
 
     @property
     def get_absolute_image_url(self):
