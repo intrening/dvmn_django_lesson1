@@ -1,6 +1,7 @@
 from django.db import models
+from django.conf import settings
 
-# Create your models here.
+
 class Place(models.Model):
     title = models.CharField(max_length=100)
     description_short = models.CharField(max_length=300)
@@ -11,3 +12,7 @@ class Place(models.Model):
 class Image(models.Model):
     places = models.ForeignKey(Place, on_delete=models.CASCADE)
     image = models.ImageField()
+
+    @property
+    def get_absolute_image_url(self):
+        return "{0}{1}".format(settings.MEDIA_URL, self.image.url)
