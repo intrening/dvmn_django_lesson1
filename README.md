@@ -15,6 +15,11 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
+
+### Пример использования
+Загруженный и работающий сайт: [https://wol87.pythonanywhere.com/](https://wol87.pythonanywhere.com/)
+Админка сайта:  [https://wol87.pythonanywhere.com/admin/](https://wol87.pythonanywhere.com/admin/)
+
 ### Цель проекта
 
 Код написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](https://dvmn.org/).
