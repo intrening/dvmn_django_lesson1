@@ -1,16 +1,16 @@
 from django.db import models
-from django.conf import settings
+from tinymce.models import HTMLField
 
 
 class Place(models.Model):
     title = models.CharField(max_length=100)
     description_short = models.CharField(max_length=300)
-    description_long = models.TextField()
+    description_long = HTMLField()
     lng = models.CharField(max_length=20)
     lat = models.CharField(max_length=20)
 
 class Image(models.Model):
-    places = models.ForeignKey(Place, on_delete=models.CASCADE)
+    place = models.ForeignKey(Place, on_delete=models.CASCADE)
     image = models.ImageField()
     my_order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
