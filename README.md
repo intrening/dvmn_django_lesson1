@@ -20,6 +20,8 @@ python manage.py runserver
 Загруженный и работающий сайт: [https://wol87.pythonanywhere.com/](https://wol87.pythonanywhere.com/)
 Админка сайта:  [https://wol87.pythonanywhere.com/admin/](https://wol87.pythonanywhere.com/admin/)
 
+Данные взяты с сайта [https://github.com/devmanorg/where-to-go-places](https://github.com/devmanorg/where-to-go-places)
+
 ### Цель проекта
 
 Код написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](https://dvmn.org/).
