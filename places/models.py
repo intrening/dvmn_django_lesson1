@@ -15,4 +15,4 @@ class Image(models.Model):
 
     @property
     def get_absolute_image_url(self):
-        return "{0}{1}".format(settings.MEDIA_URL, self.image.url)
+        return "{0}".format(self.image.url)

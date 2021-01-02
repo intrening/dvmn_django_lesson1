@@ -1,6 +1,6 @@
-from django.http import HttpResponse, JsonResponse
-from django.shortcuts import get_object_or_404
-from django.shortcuts import render
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404, render
+from django.urls import reverse
 from places.models import Place
 
 def index_view(request):
@@ -19,16 +19,15 @@ def index_view(request):
                 "properties": {
                     "title": place.title,
                     "placeId": place.pk,
-                    "detailsUrl": "{% static 'places/moscow_legends.json' %}"
+                    "detailsUrl": reverse('places-json-view', args=[place.pk])
                 }
             },
         )
-
     return render(request, 'index.html', context = {
         'places_json': places_json,
     })
 
-def place_view(request, place_id):
+def places_json_view(request, place_id):
     place = get_object_or_404(Place, pk=place_id)
     response_data = {
         'title': place.title,
