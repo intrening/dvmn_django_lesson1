@@ -23,13 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('DJANGO_SECRET_KEY') or 'g$(_m_ku5rx@vn6%i$@776$gr)xws#qmak8%7_ir%z01c+7%&vwewewe'
 DEBUG = env.bool('DJANGO_DEBUG', False)
 
-if DEBUG:
-    ALLOWED_HOSTS = []
-else:
-    ALLOWED_HOSTS = ['wol87.pythonanywhere.com',]
-
-
-# Application definition
+ALLOWED_HOSTS = ['localhost', 'wol87.pythonanywhere.com',]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
