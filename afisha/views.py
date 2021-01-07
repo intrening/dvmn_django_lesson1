@@ -31,8 +31,8 @@ def places_json_view(request, place_id):
     place = get_object_or_404(Place, pk=place_id)
     response_data = {
         'title': place.title,
-        'description_short': place.description_short,
-        'description_long': place.description_long,
+        'description_short': place.short_description,
+        'description_long': place.long_description,
         'imgs': [
             image.get_absolute_image_url for image in place.image_set.all()
         ],
