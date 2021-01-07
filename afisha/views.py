@@ -34,7 +34,7 @@ def places_json_view(request, place_id):
         'description_short': place.short_description,
         'description_long': place.long_description,
         'imgs': [
-            image.get_absolute_image_url for image in place.image_set.all()
+            image.get_absolute_image_url for image in place.place_images.all()
         ],
         'coordinates': {
             'lat': place.lat,
