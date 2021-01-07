@@ -6,8 +6,8 @@ class Place(models.Model):
     title = models.CharField('Название', max_length=100)
     short_description = models.TextField('Короткое описание')
     long_description = HTMLField('Длинное описание')
-    lng = models.CharField('Longitude', max_length=20)
-    lat = models.CharField('Latitude', max_length=20)
+    lng = models.CharField('Долгота', max_length=20)
+    lat = models.CharField('Широта', max_length=20)
 
     def __str__(self):
         return self.title
@@ -17,9 +17,9 @@ class Place(models.Model):
         verbose_name_plural = 'Места'
 
 class Image(models.Model):
-    place = models.ForeignKey(Place, on_delete=models.CASCADE)
+    place = models.ForeignKey(Place, on_delete=models.CASCADE, verbose_name='Место')
     image = models.ImageField('Изображение')
-    my_order = models.PositiveIntegerField(default=0, blank=False, null=False)
+    my_order = models.PositiveIntegerField('Порядковый номер', default=0, blank=False, null=False)
 
     class Meta(object):
         verbose_name = 'Изображение'
