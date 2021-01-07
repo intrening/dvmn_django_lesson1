@@ -28,6 +28,14 @@ python manage.py runserver
 
 Данные взяты с сайта [https://github.com/devmanorg/where-to-go-places](https://github.com/devmanorg/where-to-go-places)
 
+### Дополнительные возможности
+
+Чтобы загрузить новые места, используйте команду ``python manage.py loadplace``с указанием ссылки на json-файл с информацией о месте. Пример:
+
+```
+python3 manage.py loadplace https://raw.githubusercontent.com/intrening/dvmn_django_lesson1/main/loadplace_example.json
+```
+
 ### Цель проекта
 
 Код написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](https://dvmn.org/).
