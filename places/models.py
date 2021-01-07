@@ -19,7 +19,7 @@ class Place(models.Model):
 class Image(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE, verbose_name='Место')
     image = models.ImageField('Изображение')
-    my_order = models.PositiveIntegerField('Порядковый номер', default=0, blank=False, null=False)
+    my_order = models.PositiveIntegerField('Порядковый номер', default=0)
 
     class Meta(object):
         verbose_name = 'Изображение'
