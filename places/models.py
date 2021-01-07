@@ -26,6 +26,9 @@ class Image(models.Model):
         verbose_name_plural = 'Изображения'
         ordering = ['my_order']
 
+    def __str__(self):
+        return self.place.title
+
     @property
     def get_absolute_image_url(self):
         return self.image.url
