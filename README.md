@@ -10,6 +10,12 @@ Python3 должен быть уже установлен.
 pip install -r requirements.txt
 ```
 
+В каталоге с программой создайте файл .env, в котором укажите переменные:
+
+`DJANGO_SECRET_KEY` - секретный ключ Django
+
+`DJANGO_DEBUG` - True, если девелоперская версия сайта и False, если продакшн-версия
+
 Запуск девелоперской версии сайта:
 ```
 python manage.py runserver
