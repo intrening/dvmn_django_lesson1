@@ -27,6 +27,7 @@ def index_view(request):
         'places_json': places_json,
     })
 
+
 def places_json_view(request, place_id):
     place = get_object_or_404(Place, pk=place_id)
     response_data = {
@@ -34,7 +35,7 @@ def places_json_view(request, place_id):
         'description_short': place.short_description,
         'description_long': place.long_description,
         'imgs': [
-            image.get_absolute_image_url for image in place.place_images.all()
+            image.get_absolute_image_url for image in place.images.all()
         ],
         'coordinates': {
             'lat': place.lat,
