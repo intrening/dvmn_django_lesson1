@@ -16,8 +16,11 @@ class Place(models.Model):
         verbose_name = 'Место'
         verbose_name_plural = 'Места'
 
+
 class Image(models.Model):
-    place = models.ForeignKey(Place, on_delete=models.CASCADE, verbose_name='Место', related_name='place_images')
+    place = models.ForeignKey(
+        Place, on_delete=models.CASCADE, verbose_name='Место', related_name='place_images',
+    )
     image = models.ImageField('Изображение')
     my_order = models.PositiveIntegerField('Порядковый номер', default=0)
 
