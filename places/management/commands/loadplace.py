@@ -16,12 +16,14 @@ class Command(BaseCommand):
         response.raise_for_status()
         place_json = response.json()
 
-        place, _ = Place.objects.get_or_create(
+        place, _ = Place.objects.update_or_create(
             title=place_json['title'],
-            short_description=place_json['description_short'],
-            long_description=place_json['description_long'],
             lng=place_json['coordinates']['lng'],
             lat=place_json['coordinates']['lat'],
+            defaults={
+                'long_description': place_json['description_long'],
+                'short_description': place_json['description_short'],
+            }
         )
 
         for image_url in place_json['imgs']:
